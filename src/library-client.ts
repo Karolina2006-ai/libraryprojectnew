@@ -35,7 +35,6 @@ export class LibraryClient {
         delete this.client.defaults.headers.common["Authorization"];
     }
 
-    // authentication
     public async login(data: LoginDto): Promise<ClientResponse<LoginResponseDto | null>> {
         try {
             const response: AxiosResponse<LoginResponseDto> = await this.client.post("/login", data);
@@ -59,7 +58,6 @@ export class LibraryClient {
         }
     }
 
-    // books
     public async getBooks(): Promise<ClientResponse<Book[] | null>> {
         try {
             const response = await this.client.get<Book[]>("/book/getAll");
@@ -87,7 +85,6 @@ export class LibraryClient {
         }
     }
 
-    // users
     public async getUsers(): Promise<ClientResponse<User[] | null>> {
         try {
             const response = await this.client.get<User[]>("/user/getAll");
@@ -121,7 +118,6 @@ export class LibraryClient {
         }
     }
 
-    // loans
     public async borrowBook(bookId: number, userId: number): Promise<ClientResponse<Loan | null>> {
         try {
             const payload = {

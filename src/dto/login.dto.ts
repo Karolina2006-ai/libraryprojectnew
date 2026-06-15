@@ -12,5 +12,5 @@ export interface CurrentUser {
     username: string;
     email: string;
     name: string;
-    role: 'READER' | 'LIBRARIAN';
+    role: "READER" | "LIBRARIAN";
 }
